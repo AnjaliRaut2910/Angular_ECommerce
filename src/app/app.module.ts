@@ -11,6 +11,7 @@ import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerLoginComponent } from './seller-login/seller-login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { SellerLoginComponent } from './seller-login/seller-login.component';
     HomeComponent,
     SellerAuthComponent,
     SellerHomeComponent,
-    SellerLoginComponent
+    SellerLoginComponent,
+  
   ],
   imports: [
     BrowserModule,

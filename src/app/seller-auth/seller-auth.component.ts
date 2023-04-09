@@ -9,7 +9,9 @@ import { SignUp } from '../data-type';
   styleUrls: ['./seller-auth.component.css']
 })
 export class SellerAuthComponent {
-  constructor(private seller:SellerService,private router:Router){
+  showLogin=false
+  constructor(private seller:SellerService,private router:Router)
+  {
 
   }
   signUp(data:SignUp):void{
@@ -24,4 +26,25 @@ export class SellerAuthComponent {
 
   }
 
+
+  Login(data:SignUp):void{
+    console.warn(data)
+    
+    // this.seller.userSignUp(data).subscribe((result)=>{
+    //   console.warn(result)
+    //   if(result){
+    //     this.router.navigate(['seller-home'])
+    //   }
+
+    // });
+
+  }
+
+  openLogin()
+{
+this.showLogin=true
+}
+openSignup(){
+  this.showLogin=false
+}
 }

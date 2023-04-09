@@ -3,9 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
+import { AuthGuard } from './auth.guard';
 import { SellerLoginComponent } from './seller-login/seller-login.component';
 
-const routes: Routes = [{
+
+const routes: Routes = [
+  {
   path: "",
   component: HomeComponent,
 },
@@ -15,12 +18,13 @@ const routes: Routes = [{
 },
 {
   path:"seller-home",
-  component:SellerHomeComponent
+  component:SellerHomeComponent,
+  canActivate:[AuthGuard]
 },
 {
-  path:"seller-login",
-  component:SellerLoginComponent
-}];
+  path:"seller-login",component:SellerLoginComponent
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
